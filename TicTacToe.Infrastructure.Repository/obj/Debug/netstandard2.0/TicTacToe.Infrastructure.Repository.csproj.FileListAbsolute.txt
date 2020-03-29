@@ -1,0 +1,14 @@
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.deps.json
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.pdb
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Core.Domain.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.pdb
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\bin\Debug\netstandard2.0\TicTacToe.Core.Domain.pdb
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.csprojAssemblyReference.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.AssemblyInfoInputs.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.AssemblyInfo.cs
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.csproj.CopyComplete
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.Repository\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Repository.pdb

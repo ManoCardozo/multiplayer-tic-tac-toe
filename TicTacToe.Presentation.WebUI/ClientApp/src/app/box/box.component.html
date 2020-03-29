@@ -1,0 +1,6 @@
+
+<div class="full-size" (click)="onSelect(box.boxId)">
+  <div class="box-content" *ngIf="box.markedBy">
+    <i class="{{box.markedBy.symbol === 1 ? 'fas fa-times' : 'far fa-circle'}} box-mark"></i>
+  </div>
+</div>

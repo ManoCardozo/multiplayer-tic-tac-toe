@@ -1,0 +1,8 @@
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.deps.json
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\bin\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.pdb
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.csprojAssemblyReference.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.AssemblyInfoInputs.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.AssemblyInfo.cs
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.dll
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.InMemoryPersistence.pdb
