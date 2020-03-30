@@ -23,8 +23,14 @@ export class PlayerService {
     })
   }
 
-  InitPlayer(): Observable<Player> {
-    return this.http.post<Player>(this.baseurl + 'InitPlayer', JSON.stringify({}))
+  InitPlayer(playerName: string): Observable<Player> {
+    const opts = new HttpParams({ fromObject: { playerName: playerName } });
+    return this.http.post<Player>(this.baseurl + 'InitPlayer', JSON.stringify({}), {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      params: opts
+    })
       .pipe(
         retry(1),
         catchError(this.errorHandl)

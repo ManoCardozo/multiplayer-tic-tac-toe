@@ -19,8 +19,8 @@ export class TicTacToeHubService {
     this.startConnection();
   }
 
-  joinMatch(matchId: string) {
-    this._hubConnection.invoke('JoinMatch', matchId);
+  joinMatch(matchId: string, playerName: string) {
+    this._hubConnection.invoke('JoinMatch', matchId, playerName);
   }
 
   markBox(matchId: string) {

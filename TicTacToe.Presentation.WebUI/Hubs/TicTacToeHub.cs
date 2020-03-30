@@ -9,7 +9,7 @@ namespace TicTacToe.Presentation.WebUI.Hubs
         /// <summary>
         /// Notify opponent whenever a player joins the match
         /// </summary>
-        public async Task JoinMatch(Guid matchId)
+        public async Task JoinMatch(Guid matchId, string playerName)
         {
             var groupName = matchId.ToString();
 
@@ -18,13 +18,13 @@ namespace TicTacToe.Presentation.WebUI.Hubs
 
             await Clients
                 .GroupExcept(groupName, Context.ConnectionId)
-                .SendAsync("PlayerJoined", $"{Context.ConnectionId} has entered the game {groupName}.");
+                .SendAsync("PlayerJoined", $"{playerName} has joined the game.");
         }
 
         /// <summary>
         /// Notify opponent whenever a player leaves the match
         /// </summary>
-        public async Task LeaveMatch(Guid matchId)
+        public async Task LeaveMatch(Guid matchId, string playerName)
         {
             var groupName = matchId.ToString();
 
@@ -33,7 +33,7 @@ namespace TicTacToe.Presentation.WebUI.Hubs
 
             await Clients
                 .GroupExcept(groupName, Context.ConnectionId)
-                .SendAsync("PlayerLeft", $"{Context.ConnectionId} has left the game {groupName}.");
+                .SendAsync("PlayerLeft", $"{playerName} has left the game.");
         }
 
         /// <summary>

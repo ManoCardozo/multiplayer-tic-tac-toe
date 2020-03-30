@@ -5,6 +5,17 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import {
+  MatFormFieldModule,
+  MatDatepickerModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatNativeDateModule,
+  MatTableModule,
+  MatInputModule,
+  MatButtonModule,
+  MatProgressSpinnerModule,
+  MatPaginatorModule,
   MatSnackBarModule,
   MatDialogModule
 } from '@angular/material';
@@ -13,7 +24,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BoardComponent } from './board/board.component';
 import { BoxComponent } from './box/box.component';
+import { NewPlayerDialogComponent } from './new-player-dialog/new-player-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,21 +34,35 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     BoardComponent,
     BoxComponent,
+    NewPlayerDialogComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
 
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
     MatSnackBarModule,
     MatDialogModule,
 
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewPlayerDialogComponent],
 })
 export class AppModule { }

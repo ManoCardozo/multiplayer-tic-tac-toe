@@ -1,12 +1,12 @@
 
-<div class="col-12">Match ID: {{matchId}}</div>
-<div class="col-12">Player ID: {{playerId}}</div>
+  <div *ngIf="match">
+    <div class="col-12">Match ID: {{match.matchId}}</div>
+    <div class="col-12">Player ID: {{player.playerId}}</div>
 
-<div class="col-12 top-buffer">
-  <div class="col-6">{{player1Name}}</div>
-  <div class="col-6">{{player2Name}}</div>
-</div>
+    <div class="col-12 top-buffer">
+      <div class="col-6">{{match.player1Name}}</div>
+      <div class="col-6">{{match.player2Name}}</div>
+    </div>
 
-<div *ngIf="matchId">
-  <app-board [matchId]="matchId" [playerId]="playerId"></app-board>
-</div>
+    <app-board [matchId]="match.matchId" [playerId]="player.playerId"></app-board>
+  </div>

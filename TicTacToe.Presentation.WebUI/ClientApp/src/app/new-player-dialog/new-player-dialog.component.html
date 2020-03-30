@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Tic Tac Toe</h1>
+
+<mat-dialog-content>
+  <p>Please enter your name: </p>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="newPlayer.name">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="newPlayer.name" color="primary">
+    <fa-icon [icon]="faPlayCircle" class="button-icon"></fa-icon>
+    Start
+  </button>
+</mat-dialog-actions>

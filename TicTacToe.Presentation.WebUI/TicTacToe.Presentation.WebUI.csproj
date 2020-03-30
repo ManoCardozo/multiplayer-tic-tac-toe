@@ -24,9 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\new-player-dialog\new-player-dialog.component.ts" />
     <None Remove="ClientApp\src\models\board.ts" />
     <None Remove="ClientApp\src\models\box.ts" />
     <None Remove="ClientApp\src\models\match.ts" />
+    <None Remove="ClientApp\src\models\newPlayer.ts" />
     <None Remove="ClientApp\src\models\player.ts" />
     <None Remove="ClientApp\src\services\boardService.ts" />
     <None Remove="ClientApp\src\services\boxService.ts" />
@@ -43,6 +45,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\new-player-dialog\new-player-dialog.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\newPlayer.ts" />
     <TypeScriptCompile Include="ClientApp\src\models\player.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
