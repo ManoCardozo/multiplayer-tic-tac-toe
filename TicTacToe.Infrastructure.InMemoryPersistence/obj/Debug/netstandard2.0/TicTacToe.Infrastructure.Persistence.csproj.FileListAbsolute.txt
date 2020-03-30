@@ -4,9 +4,9 @@ C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersist
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\bin\Debug\netstandard2.0\TicTacToe.Core.Domain.dll
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\bin\Debug\netstandard2.0\TicTacToe.Core.Domain.pdb
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.csprojAssemblyReference.cache
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.AssemblyInfoInputs.cache
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.AssemblyInfo.cs
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.csproj.CopyComplete
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.dll
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.pdb
-C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Infrastructure.InMemoryPersistence\obj\Debug\netstandard2.0\TicTacToe.Infrastructure.Persistence.csproj.CoreCompileInputs.cache

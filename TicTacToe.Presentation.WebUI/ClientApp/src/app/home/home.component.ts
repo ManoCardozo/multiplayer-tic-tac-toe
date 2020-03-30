@@ -5,12 +5,14 @@ import { BoardService } from '../../services/boardService';
 import { MatchService } from '../../services/matchService';
 import { PlayerService } from '../../services/playerService';
 import { TicTacToeHubService } from '../../services/TicTacToeHubService'
+import { SnackbarService } from '../../services/snackbarService'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+
   boxes: Box[];
   player1Name: string;
   player2Name: string;
@@ -24,14 +26,15 @@ export class HomeComponent {
     public boardService: BoardService,
     public matchService: MatchService,
     public playerService: PlayerService,
-    public ticTacToeHubService: TicTacToeHubService
+    public ticTacToeHubService: TicTacToeHubService,
+    public snackbarService: SnackbarService
   ) {
     this.subscribeToEvents();
     this.initMatch();
   }
 
   private initMatch(): void {
-
+    
     //Init player
     this.playerService.InitPlayer().subscribe(data => {
       this.playerId = data.playerId;
@@ -62,7 +65,7 @@ export class HomeComponent {
     });
 
     this.ticTacToeHubService.playerJoined.subscribe((message) => {
-      alert(message);
+      this.snackbarService.show(message, "Dismiss");
     });
   }
 

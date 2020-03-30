@@ -32,6 +32,7 @@
     <None Remove="ClientApp\src\services\boxService.ts" />
     <None Remove="ClientApp\src\services\matchService.ts" />
     <None Remove="ClientApp\src\services\playerService.ts" />
+    <None Remove="ClientApp\src\services\snackBarService.ts" />
     <None Remove="ClientApp\src\services\ticTacToeHubService.ts" />
   </ItemGroup>
 
@@ -63,6 +64,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\services\boardService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\snackbarService.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
