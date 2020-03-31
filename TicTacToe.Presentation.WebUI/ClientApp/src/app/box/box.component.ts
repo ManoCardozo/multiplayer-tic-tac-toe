@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Box } from '../../models/box';
 import { BoxService } from '../../services/boxService';
 import { TicTacToeHubService } from '../../services/TicTacToeHubService'
+import { faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-box',
@@ -20,14 +21,19 @@ export class BoxComponent {
     
   }
 
+  faTimes = faTimes;
+  faCircle = faCircle;
   boxes: Box[];
 
-  onSelect(boxId: string) {
-    this.boxService.Mark(boxId, this.playerId).subscribe(data => {
-      console.log('Box Updated');
-    });
+  onSelect(box: Box) {
+    if (box.markedBy == null) {
+      let boxId = box.boxId;
+      this.boxService.Mark(boxId, this.playerId).subscribe(data => {
+        console.log('Box Updated');
+      });
 
-    this.ticTacToeHubService.markBox(this.matchId);
+      this.ticTacToeHubService.markBox(this.matchId);
+    }
   }
 
 }

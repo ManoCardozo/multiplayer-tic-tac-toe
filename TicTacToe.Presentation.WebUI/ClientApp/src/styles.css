@@ -52,12 +52,11 @@ code {
 }
 
 .box-content {
-  padding-top: 0.5vw;
   text-align: center;
 }
 
 .box-mark {
-  font-size: 10vw;
+  font-size: 9vw;
 }
 
 .box-mark-circle {

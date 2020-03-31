@@ -35,12 +35,15 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 return NotFound();
             }
 
-            using (var unitOfWork = unitOfWorkFactory.Create())
+            if (box.MarkedBy == null)
             {
-                //Mark box by populating marked by person
-                box.MarkedById = player.PlayerId;
+                using (var unitOfWork = unitOfWorkFactory.Create())
+                {
+                    //Mark box by populating marked by person
+                    box.MarkedById = player.PlayerId;
 
-                unitOfWork.Commit();
+                    unitOfWork.Commit();
+                }
             }
 
             return Ok(new BoxViewData
