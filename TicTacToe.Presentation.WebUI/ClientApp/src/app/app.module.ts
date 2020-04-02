@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { BoardComponent } from './board/board.component';
 import { BoxComponent } from './box/box.component';
 import { NewPlayerDialogComponent } from './new-player-dialog/new-player-dialog.component';
+import { MatchWonDialogComponent } from './match-won-dialog/match-won-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -35,6 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BoardComponent,
     BoxComponent,
     NewPlayerDialogComponent,
+    MatchWonDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -63,6 +65,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NewPlayerDialogComponent],
+  entryComponents: [NewPlayerDialogComponent, MatchWonDialogComponent],
 })
 export class AppModule { }

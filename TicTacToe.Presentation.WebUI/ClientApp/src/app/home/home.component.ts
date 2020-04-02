@@ -10,6 +10,7 @@ import { TicTacToeHubService } from '../../services/TicTacToeHubService'
 import { SnackbarService } from '../../services/snackbarService'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NewPlayerDialogComponent } from '../new-player-dialog/new-player-dialog.component'
+import { MatchWonDialogComponent } from '../match-won-dialog/match-won-dialog.component'
 
 @Component({
   selector: 'app-home',
@@ -41,7 +42,7 @@ export class HomeComponent {
   }
 
   welcomePlayer(): void {
-    const dialogRef = this.dialog.open(NewPlayerDialogComponent, {
+    const dialogRef = this.dialog.open(MatchWonDialogComponent, {
       width: '300px',
       data: {  }
     });
