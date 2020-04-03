@@ -11,6 +11,7 @@ import { SnackbarService } from '../../services/snackbarService'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NewPlayerDialogComponent } from '../new-player-dialog/new-player-dialog.component'
 import { MatchWonDialogComponent } from '../match-won-dialog/match-won-dialog.component'
+import { MatchLostDialogComponent } from '../match-lost-dialog/match-lost-dialog.component'
 
 @Component({
   selector: 'app-home',
@@ -42,7 +43,7 @@ export class HomeComponent {
   }
 
   welcomePlayer(): void {
-    const dialogRef = this.dialog.open(MatchWonDialogComponent, {
+    const dialogRef = this.dialog.open(NewPlayerDialogComponent, {
       width: '300px',
       data: {  }
     });
