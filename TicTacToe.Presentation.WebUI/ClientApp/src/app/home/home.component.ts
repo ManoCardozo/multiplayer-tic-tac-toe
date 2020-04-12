@@ -53,6 +53,20 @@ export class HomeComponent {
     });
   }
 
+  showMatchWonDialog(): void {
+    const dialogRef = this.dialog.open(MatchWonDialogComponent, {
+      width: '300px',
+      data: {}
+    });
+  }
+
+  showMatchLostDialog(): void {
+    const dialogRef = this.dialog.open(MatchLostDialogComponent, {
+      width: '300px',
+      data: {}
+    });
+  }
+
   initPlayer(playerName: string) {
     //Init player
     this.playerService.InitPlayer(playerName).subscribe(player => {
@@ -77,6 +91,18 @@ export class HomeComponent {
       this.boardService.GetBoxes(this.match.matchId).subscribe(board => {
         this.boxes = board.boxes;
         console.log('Done');
+      });
+
+      this.matchService.Get(this.match.matchId).subscribe(match => {
+        this.match = match;
+        if (match.winnerId != null) {
+          if (match.winnerId == this.player.playerId) {
+            this.showMatchWonDialog();
+          }
+          else {
+            this.showMatchLostDialog();
+          }
+        }
       });
     });
 

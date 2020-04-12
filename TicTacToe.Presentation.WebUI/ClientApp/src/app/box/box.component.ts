@@ -30,9 +30,9 @@ export class BoxComponent {
       let boxId = box.boxId;
       this.boxService.Mark(boxId, this.playerId).subscribe(data => {
         console.log('Box Updated');
-      });
 
-      this.ticTacToeHubService.markBox(this.matchId);
+        this.ticTacToeHubService.markBox(this.matchId);
+      });
     }
   }
 

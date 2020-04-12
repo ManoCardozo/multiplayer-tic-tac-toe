@@ -41,6 +41,7 @@ namespace TicTacToe.Presentation.WebUI
             services.AddTransient<IBoardService, BoardService>();
             services.AddTransient<IPlayerService, PlayerService>();
             services.AddTransient<IBoxService, BoxService>();
+            services.AddTransient<IMatchResultService, MatchResultService>();
 
             //Infrastructure
             services.AddPersistence(Configuration);

@@ -6,3 +6,4 @@ C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Core.Domain\obj\Debug\netstand
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Core.Domain\obj\Debug\netstandard2.0\TicTacToe.Core.Domain.AssemblyInfo.cs
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Core.Domain\obj\Debug\netstandard2.0\TicTacToe.Core.Domain.dll
 C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Core.Domain\obj\Debug\netstandard2.0\TicTacToe.Core.Domain.pdb
+C:\Users\Unknown\source\repos\TicTacToe\TicTacToe.Core.Domain\obj\Debug\netstandard2.0\TicTacToe.Core.Domain.csprojAssemblyReference.cache

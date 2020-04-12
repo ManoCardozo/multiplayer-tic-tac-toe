@@ -11,11 +11,14 @@ namespace TicTacToe.Presentation.WebUI.Controllers
     public class MatchController : ControllerBase
     {
         private readonly IMatchService matchService;
+        private readonly IMatchResultService matchResultService;
 
         public MatchController(
-            IMatchService matchService)
+            IMatchService matchService,
+            IMatchResultService matchResultService)
         {
             this.matchService = matchService;
+            this.matchResultService = matchResultService;
         }
 
         [HttpGet]
@@ -40,11 +43,14 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 .Take(1)?
                 .FirstOrDefault();
 
+            var winner = matchResultService.DetermineWinner(match);
+
             var matchViewData = new MatchViewData
             {
                 MatchId = match.MatchId,
                 Player1Name = player1?.Name,
                 Player2Name = player2?.Name,
+                WinnerId = winner?.PlayerId
             };
 
             return Ok(matchViewData);

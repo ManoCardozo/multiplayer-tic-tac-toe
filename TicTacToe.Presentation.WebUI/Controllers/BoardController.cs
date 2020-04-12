@@ -65,7 +65,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 {
                     Boxes = boxes.Select(b => new BoxViewData
                     {
-                        BoxId = b.BoxId,    
+                        BoxId = b.BoxId,
                         MarkedBy = b.MarkedBy != null ? new PlayerViewData
                         {
                             PlayerId = b.MarkedBy.PlayerId,

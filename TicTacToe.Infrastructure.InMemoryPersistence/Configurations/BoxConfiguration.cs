@@ -10,6 +10,8 @@ namespace TicTacToe.Infrastructure.Persistence.Configurations
         {
             builder.HasKey(p => p.BoxId);
 
+            builder.Property(p => p.BoxPosition);
+
             builder.Property(p => p.BoardId);
 
             builder.Property(p => p.MarkedById);
