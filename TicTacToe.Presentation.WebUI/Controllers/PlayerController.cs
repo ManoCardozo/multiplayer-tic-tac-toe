@@ -28,7 +28,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult<PlayerViewData> InitPlayer(string playerName)
+        public ActionResult<PlayerViewModel> InitPlayer(string playerName)
         {
             var match = matchService.GetOpen();
 
@@ -62,13 +62,13 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 unitOfWork.Commit();
             }
 
-            var playerViewData = new PlayerViewData
+            var playerViewModel = new PlayerViewModel
             {
                 PlayerId = newPlayer.PlayerId,
                 MatchId = newPlayer.Match.MatchId
             };
 
-            return Ok(playerViewData);
+            return Ok(playerViewModel);
         }
     }
 }

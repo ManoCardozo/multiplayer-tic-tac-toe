@@ -2,9 +2,9 @@
 
 namespace TicTacToe.Presentation.WebUI.Models
 {
-    public class BoxViewData
+    public class BoxViewModel
     {
         public Guid BoxId { get; set; }
-        public PlayerViewData MarkedBy { get; set; }
+        public PlayerViewModel MarkedBy { get; set; }
     }
 }

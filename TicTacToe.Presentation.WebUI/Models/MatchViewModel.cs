@@ -2,7 +2,7 @@
 
 namespace TicTacToe.Presentation.WebUI.Models
 {
-    public class MatchViewData
+    public class MatchViewModel
     {
         public Guid MatchId { get; set; }
         public string Player1Name { get; set; }

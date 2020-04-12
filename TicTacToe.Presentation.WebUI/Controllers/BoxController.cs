@@ -25,7 +25,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
         }
 
         [HttpPut]
-        public ActionResult<BoxViewData> Mark(Guid playerId, Guid boxId)
+        public ActionResult<BoxViewModel> Mark(Guid playerId, Guid boxId)
         {
             var box = boxService.Get(boxId);
             var player = playerService.Get(playerId);
@@ -46,7 +46,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 }
             }
 
-            return Ok(new BoxViewData
+            return Ok(new BoxViewModel
             {
                 BoxId = box.BoxId
             });

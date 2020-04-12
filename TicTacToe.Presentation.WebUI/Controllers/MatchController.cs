@@ -22,7 +22,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<MatchViewData> Get(Guid matchId)
+        public ActionResult<MatchViewModel> Get(Guid matchId)
         {
             var match = matchService.Get(matchId);
 
@@ -45,7 +45,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
 
             var winner = matchResultService.DetermineWinner(match);
 
-            var matchViewData = new MatchViewData
+            var matchViewModel = new MatchViewModel
             {
                 MatchId = match.MatchId,
                 Player1Name = player1?.Name,
@@ -53,7 +53,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 WinnerId = winner?.PlayerId
             };
 
-            return Ok(matchViewData);
+            return Ok(matchViewModel);
         }
     }
 }

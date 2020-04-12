@@ -31,7 +31,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<MatchViewData> Get(Guid matchId)
+        public ActionResult<MatchViewModel> Get(Guid matchId)
         {
             var match = matchService.Get(matchId);
 
@@ -42,7 +42,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
 
             var board = match.Board;
 
-            var boardViewData = new BoardViewData();
+            var boardViewModel = new BoardViewModel();
             
             using (var unitOfWork = unitOfWorkFactory.Create())
             {
@@ -61,12 +61,12 @@ namespace TicTacToe.Presentation.WebUI.Controllers
 
                 var boxes = match.Board?.Boxes;
 
-                boardViewData = new BoardViewData
+                boardViewModel = new BoardViewModel
                 {
-                    Boxes = boxes.Select(b => new BoxViewData
+                    Boxes = boxes.Select(b => new BoxViewModel
                     {
                         BoxId = b.BoxId,
-                        MarkedBy = b.MarkedBy != null ? new PlayerViewData
+                        MarkedBy = b.MarkedBy != null ? new PlayerViewModel
                         {
                             PlayerId = b.MarkedBy.PlayerId,
                             Name = b.MarkedBy.Name,
@@ -77,7 +77,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             }
                 
 
-            return Ok(boardViewData);
+            return Ok(boardViewModel);
         }
     }
 }

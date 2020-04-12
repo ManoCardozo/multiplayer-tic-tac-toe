@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace TicTacToe.Presentation.WebUI.Models
 {
-    public class BoardViewData
+    public class BoardViewModel
     {
-        public BoardViewData()
+        public BoardViewModel()
         {
-            Boxes = new List<BoxViewData>();
+            Boxes = new List<BoxViewModel>();
         }
 
         public Guid BoardId { get; set; }
-        public List<BoxViewData> Boxes { get; set; }
+        public List<BoxViewModel> Boxes { get; set; }
     }
 }
