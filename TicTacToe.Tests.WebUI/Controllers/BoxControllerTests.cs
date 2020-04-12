@@ -73,5 +73,83 @@ namespace TicTacToe.Tests.WebUI.Controllers
             Assert.AreEqual(okResult.StatusCode, 200);
             Assert.AreEqual(boxViewModel.BoxId, boxId);
         }
+
+        [Test]
+        public void Invalid_Box_Should_Return_Not_Found()
+        {
+            // Arrange
+            var playerId = Guid.NewGuid();
+            var boxId = Guid.NewGuid();
+
+            boxServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(() => null);
+
+            playerServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(new Player
+                {
+
+                });
+
+            // Act
+            var response = controller.Mark(playerId, boxId);
+            var notFoundResult = response.Result as NotFoundResult;
+
+            // Assert
+            Assert.IsNotNull(notFoundResult);
+            Assert.AreEqual(notFoundResult.StatusCode, 404);
+        }
+
+        [Test]
+        public void Invalid_Player_Should_Return_Not_Found()
+        {
+            // Arrange
+            var playerId = Guid.NewGuid();
+            var boxId = Guid.NewGuid();
+
+            boxServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(new Box
+                {
+                    BoxId = boxId
+                });
+
+            playerServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(() => null);
+
+            // Act
+            var response = controller.Mark(playerId, boxId);
+            var notFoundResult = response.Result as NotFoundResult;
+
+            // Assert
+            Assert.IsNotNull(notFoundResult);
+            Assert.AreEqual(notFoundResult.StatusCode, 404);
+        }
+
+        [Test]
+        public void Invalid_Player_And_Box_Should_Return_Not_Found()
+        {
+            // Arrange
+            var playerId = Guid.NewGuid();
+            var boxId = Guid.NewGuid();
+
+            boxServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(() => null);
+
+            playerServiceMock
+                .Setup(m => m.Get(It.IsAny<Guid>()))
+                .Returns(() => null);
+
+            // Act
+            var response = controller.Mark(playerId, boxId);
+            var notFoundResult = response.Result as NotFoundResult;
+
+            // Assert
+            Assert.IsNotNull(notFoundResult);
+            Assert.AreEqual(notFoundResult.StatusCode, 404);
+        }
     }
 }
