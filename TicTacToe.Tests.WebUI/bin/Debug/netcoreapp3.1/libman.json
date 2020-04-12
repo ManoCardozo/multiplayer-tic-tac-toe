@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "provider": "cdnjs",
+      "library": "font-awesome@5.12.1",
+      "destination": "ClientApp/node_modules/"
+    },
+    {
+      "library": "@microsoft/signalr@latest",
+      "destination": "ClientApp/node_modules/"
+    }
+  ]
+}
