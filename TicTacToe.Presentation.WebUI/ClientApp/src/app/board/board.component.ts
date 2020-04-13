@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Box } from '../../models/box';
+import { Match } from '../../models/match';
 import { BoardService } from '../../services/boardService';
 import { TicTacToeHubService } from '../../services/TicTacToeHubService'
 
@@ -8,7 +9,7 @@ import { TicTacToeHubService } from '../../services/TicTacToeHubService'
   templateUrl: './board.component.html',
 })
 export class BoardComponent implements OnInit {
-  @Input() matchId: string;
+  @Input() match: Match;
   @Input() playerId: string;
 
   constructor(
@@ -23,14 +24,14 @@ export class BoardComponent implements OnInit {
   private initBoard(): void {
 
     //Init Board
-    this.boardService.GetBoxes(this.matchId).subscribe(data => {
+    this.boardService.GetBoxes(this.match.matchId).subscribe(data => {
       this.boxes = data.boxes;
     });
   }
 
   private subscribeToEvents(): void {
     this.ticTacToeHubService.boardUpdated.subscribe(() => {
-      this.boardService.GetBoxes(this.matchId).subscribe(data => {
+      this.boardService.GetBoxes(this.match.matchId).subscribe(data => {
         this.boxes = data.boxes;
         console.log('Done');
       });

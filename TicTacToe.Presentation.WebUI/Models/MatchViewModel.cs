@@ -8,5 +8,6 @@ namespace TicTacToe.Presentation.WebUI.Models
         public string Player1Name { get; set; }
         public string Player2Name { get; set; }
         public Guid? WinnerId { get; set; }
+        public Guid? PlayerTurnId { get; set;  }
     }
 }

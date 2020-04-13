@@ -10,6 +10,7 @@ namespace TicTacToe.Core.Domain.Entities
         {
             MaxPlayers = maxPlayers;
             Players = new List<Player>();
+            Plays = new List<Play>();
         }
 
         public Guid MatchId { get; set; }
@@ -17,5 +18,6 @@ namespace TicTacToe.Core.Domain.Entities
 
         public virtual Board Board { get; set; }
         public virtual List<Player> Players { get; set; }
+        public virtual List<Play> Plays { get; set; }
     }
 }

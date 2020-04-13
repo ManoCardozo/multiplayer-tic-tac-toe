@@ -7,6 +7,6 @@ namespace TicTacToe.Core.Domain.Entities
         public Guid PlayId { get; set; }
         public Guid PlayerId { get; set; }
 
-        public virtual Player Player { get; set; }
+        public virtual Match Match { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace TicTacToe.Core.Domain.Entities
         public Player()
         {
             FilledBoxes = new List<Box>();
-            Plays = new List<Play>();
         }
 
         public Guid PlayerId { get; set; }
@@ -19,6 +18,5 @@ namespace TicTacToe.Core.Domain.Entities
 
         public virtual Match Match { get; set; }
         public virtual List<Box> FilledBoxes { get; set; }
-        public virtual List<Play> Plays { get; set; }
     }
 }

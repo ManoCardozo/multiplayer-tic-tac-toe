@@ -7,5 +7,6 @@ namespace TicTacToe.Core.Application.Interfaces
     {
         Match Get(Guid matchId);
         Match GetOpen();
+        Player GetNextTurn(Match match);
     }
 }

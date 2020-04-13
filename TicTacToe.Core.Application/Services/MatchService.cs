@@ -29,6 +29,17 @@ namespace TicTacToe.Core.Application.Services
 
             return match;
         }
+
+        public Player GetNextTurn(Match match)
+        {
+            var previousTurn = match.Plays.LastOrDefault();
+
+            var nextTurn = match
+                .Players
+                .FirstOrDefault(p => p.PlayerId != previousTurn?.PlayerId);
+
+            return nextTurn;
+        }
     }
 }
  

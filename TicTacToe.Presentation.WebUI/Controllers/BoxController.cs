@@ -42,6 +42,11 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                     //Mark box by populating marked by person
                     box.MarkedById = player.PlayerId;
 
+                    //Add play to match history
+                    box.Board.Match.Plays.Add(new Core.Domain.Entities.Play {
+                        PlayerId = player.PlayerId
+                    });
+
                     unitOfWork.Commit();
                 }
             }

@@ -44,13 +44,15 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 .FirstOrDefault();
 
             var winner = matchResultService.DetermineWinner(match);
+            var turn = matchService.GetNextTurn(match);
 
             var matchViewModel = new MatchViewModel
             {
                 MatchId = match.MatchId,
                 Player1Name = player1?.Name,
                 Player2Name = player2?.Name,
-                WinnerId = winner?.PlayerId
+                WinnerId = winner?.PlayerId,
+                PlayerTurnId = turn?.PlayerId
             };
 
             return Ok(matchViewModel);

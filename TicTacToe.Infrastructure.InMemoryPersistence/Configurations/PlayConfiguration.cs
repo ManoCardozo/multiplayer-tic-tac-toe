@@ -13,7 +13,7 @@ namespace TicTacToe.Infrastructure.Persistence.Configurations
             builder.Property(p => p.PlayerId);
 
             builder
-                .HasOne(p => p.Player)
+                .HasOne(p => p.Match)
                 .WithMany(b => b.Plays);
         }
     }

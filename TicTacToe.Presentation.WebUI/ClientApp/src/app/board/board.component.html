@@ -1,7 +1,7 @@
 <div class="col-12 top-buffer" *ngIf="boxes && boxes.length > 0">
   <div class="row">
     <div class="col-4 board-box box-{{boxIndex}}" *ngFor="let box of boxes; let boxIndex = index">
-      <app-box [box]="box" [boxIndex]="boxIndex" [matchId]="matchId" [playerId]="playerId"></app-box>
+      <app-box [box]="box" [boxIndex]="boxIndex" [match]="match" [playerId]="playerId"></app-box>
     </div>
   </div>
 </div>
