@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TicTacToe.Presentation.WebUI.Models;
 using TicTacToe.Core.Application.Interfaces;
 using TicTacToe.Infrastructure.Repository.UnitOfWork;
+using TicTacToe.Core.Domain.Entities;
 
 namespace TicTacToe.Presentation.WebUI.Controllers
 {
@@ -43,7 +44,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                     box.MarkedById = player.PlayerId;
 
                     //Add play to match history
-                    box.Board.Match.Plays.Add(new Core.Domain.Entities.Play {
+                    box.Board.Match.Plays.Add(new Play {
                         PlayerId = player.PlayerId
                     });
 
