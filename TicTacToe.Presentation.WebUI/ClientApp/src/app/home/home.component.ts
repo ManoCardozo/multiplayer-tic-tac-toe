@@ -108,6 +108,9 @@ export class HomeComponent {
 
     this.ticTacToeHubService.playerJoined.subscribe((message) => {
       this.snackbarService.show(message, "Dismiss");
+      this.matchService.Get(this.match.matchId).subscribe(match => {
+        this.match = match;
+      });
     });
   }
 

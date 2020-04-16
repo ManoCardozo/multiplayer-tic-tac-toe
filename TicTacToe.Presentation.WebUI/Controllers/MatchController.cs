@@ -49,8 +49,20 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             var matchViewModel = new MatchViewModel
             {
                 MatchId = match.MatchId,
-                Player1Name = player1?.Name,
-                Player2Name = player2?.Name,
+                Player1 = player1 != null ? new PlayerViewModel
+                {
+                    PlayerId = player1.PlayerId,
+                    Name = player1.Name,
+                    MatchId = player1.MatchId,
+                    Symbol = player1.Symbol
+                } : null,
+                Player2 = player2 != null ? new PlayerViewModel
+                {
+                    PlayerId = player2.PlayerId,
+                    Name = player2.Name,
+                    MatchId = player2.MatchId,
+                    Symbol = player2.Symbol
+                } : null,
                 WinnerId = winner?.PlayerId,
                 PlayerTurnId = turn?.PlayerId
             };

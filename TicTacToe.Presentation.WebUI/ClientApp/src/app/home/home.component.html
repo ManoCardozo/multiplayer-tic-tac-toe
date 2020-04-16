@@ -3,9 +3,32 @@
     <div class="col-12">Match ID: {{match.matchId}}</div>
     <div class="col-12">Player ID: {{player.playerId}}</div>
 
-    <div class="col-12 top-buffer">
-      <div class="col-6">{{match.player1Name}}</div>
-      <div class="col-6">{{match.player2Name}}</div>
+    <div class="col-12 match-header-message top-buffer">
+      <div *ngIf="!match.playerTurnId">
+        <div class="spinner-wrapper">
+          <mat-spinner diameter="20"></mat-spinner>
+          <p style="padding-left: 5px;">Waiting for opponent...</p>
+        </div>
+      </div>
+      <div *ngIf="match.playerTurnId && match.playerTurnId === player.playerId">
+        Your turn to play
+      </div>
+      <div *ngIf="match.playerTurnId && match.playerTurnId !== player.playerId">
+        Your opponent's turn to play
+      </div>
+    </div>
+
+    <div class="row top-buffer">
+      <div class="col-6">
+        <p [ngClass]="(match.player1 && match.playerTurnId === match.player1.playerId) ? 'player-turn' : ''">
+          {{match.player1 ? match.player1.name : ''}}
+        </p>
+      </div>
+      <div class="col-6 text-right">
+        <p [ngClass]="(match.player2 && match.playerTurnId === match.player2.playerId) ? 'player-turn' : ''">
+          {{match.player2 ? match.player2.name : ''}}
+        </p>
+      </div>
     </div>
 
     <app-board [match]="match" [playerId]="player.playerId"></app-board>

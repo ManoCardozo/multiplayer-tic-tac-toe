@@ -3,8 +3,8 @@ import { Board } from '../models/board'
 
 export class Match {
   matchId: string;
-  player1Name: string;
-  player2Name: string;
+  player1: Player;
+  player2: Player;
   winnerId: string;
   playerTurnId: string;
 

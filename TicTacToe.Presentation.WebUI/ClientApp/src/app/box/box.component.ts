@@ -30,9 +30,15 @@ export class BoxComponent {
 
   onSelect(box: Box) {
     var isBoxMarked = box.markedBy != null;
-    var isPlayerTurn = this.playerId == this.match.playerTurnId || this.match.playerTurnId == null;
+    var matchReady = this.match.playerTurnId == null;
+    var isPlayerTurn = this.playerId == this.match.playerTurnId;
 
-    if (!isPlayerTurn) {
+    if (matchReady)
+    {
+      this.snackbarService.show("Match is not ready yet.", "Dismiss");
+      return;
+    }
+    else if (!isPlayerTurn) {
       this.snackbarService.show("It's not your turn. Please wait.", "Dismiss");
       return;
     }

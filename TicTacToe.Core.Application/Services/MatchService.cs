@@ -32,7 +32,15 @@ namespace TicTacToe.Core.Application.Services
 
         public Player GetNextTurn(Match match)
         {
-            var previousTurn = match.Plays.LastOrDefault();
+            var previousTurn = match
+                .Plays
+                .LastOrDefault();
+
+            //Match is not ready yet
+            if (match.Players.Count < match.MaxPlayers)
+            {
+                return null;
+            }
 
             var nextTurn = match
                 .Players
