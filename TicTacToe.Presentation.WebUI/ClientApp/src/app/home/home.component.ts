@@ -58,12 +58,20 @@ export class HomeComponent {
       width: '300px',
       data: {}
     });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.initPlayer(this.player.name);
+    });
   }
 
   showMatchLostDialog(): void {
     const dialogRef = this.dialog.open(MatchLostDialogComponent, {
       width: '300px',
       data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.initPlayer(this.player.name);
     });
   }
 
@@ -77,11 +85,7 @@ export class HomeComponent {
         this.match = match;
 
         this.ticTacToeHubService.joinMatch(this.match.matchId, playerName);
-
-        //Get boxes
-        this.boardService.GetBoxes(this.match.matchId).subscribe(board => {
-          this.boxes = board.boxes;
-        });
+        this.ticTacToeHubService.updateBoard(this.match.matchId);
       });
     });
   }
@@ -90,7 +94,6 @@ export class HomeComponent {
     this.ticTacToeHubService.boardUpdated.subscribe(() => {
       this.boardService.GetBoxes(this.match.matchId).subscribe(board => {
         this.boxes = board.boxes;
-        console.log('Done');
       });
 
       this.matchService.Get(this.match.matchId).subscribe(match => {

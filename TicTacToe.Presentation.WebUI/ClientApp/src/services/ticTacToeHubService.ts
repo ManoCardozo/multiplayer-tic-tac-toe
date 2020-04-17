@@ -23,7 +23,7 @@ export class TicTacToeHubService {
     this._hubConnection.invoke('JoinMatch', matchId, playerName);
   }
 
-  markBox(matchId: string) {
+  updateBoard(matchId: string) {
     this._hubConnection.invoke('UpdateBoard', matchId);
   }
 

@@ -51,7 +51,7 @@ export class BoxComponent {
       this.boxService.Mark(boxId, this.playerId).subscribe(data => {
         console.log('Box Updated');
 
-        this.ticTacToeHubService.markBox(this.match.matchId);
+        this.ticTacToeHubService.updateBoard(this.match.matchId);
       });
     }
   }

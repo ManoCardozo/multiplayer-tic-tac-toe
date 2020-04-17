@@ -65,6 +65,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             var playerViewModel = new PlayerViewModel
             {
                 PlayerId = newPlayer.PlayerId,
+                Name = newPlayer.Name,
                 MatchId = newPlayer.Match.MatchId
             };
 
