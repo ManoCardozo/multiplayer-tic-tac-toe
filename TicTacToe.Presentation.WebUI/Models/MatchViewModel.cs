@@ -8,6 +8,7 @@ namespace TicTacToe.Presentation.WebUI.Models
         public PlayerViewModel Player1 { get; set; }
         public PlayerViewModel Player2 { get; set; }
         public Guid? WinnerId { get; set; }
-        public Guid? PlayerTurnId { get; set;  }
+        public Guid? PlayerTurnId { get; set; }
+        public bool IsFinished { get; set; }
     }
 }

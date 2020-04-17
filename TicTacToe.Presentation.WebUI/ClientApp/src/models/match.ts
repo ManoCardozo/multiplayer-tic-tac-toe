@@ -7,6 +7,7 @@ export class Match {
   player2: Player;
   winnerId: string;
   playerTurnId: string;
+  isFinished: boolean;
 
   constructor(id: string) {
     this.matchId = id;

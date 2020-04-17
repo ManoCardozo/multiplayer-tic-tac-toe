@@ -45,6 +45,7 @@ namespace TicTacToe.Presentation.WebUI.Controllers
 
             var winner = matchResultService.DetermineWinner(match);
             var turn = matchService.GetNextTurn(match);
+            var isFinished = matchService.IsFinished(match);
 
             var matchViewModel = new MatchViewModel
             {
@@ -64,7 +65,8 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                     Symbol = player2.Symbol
                 } : null,
                 WinnerId = winner?.PlayerId,
-                PlayerTurnId = turn?.PlayerId
+                PlayerTurnId = turn?.PlayerId,
+                IsFinished = isFinished
             };
 
             return Ok(matchViewModel);

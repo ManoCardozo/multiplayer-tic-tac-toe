@@ -48,6 +48,14 @@ namespace TicTacToe.Core.Application.Services
 
             return nextTurn;
         }
+
+        public bool IsFinished(Match match)
+        {
+            var boxes = match?.Board?.Boxes;
+            var isFinished = boxes != null && !boxes.Any(b => b.MarkedBy == null);
+
+            return isFinished;
+        }
     }
 }
  
