@@ -2,7 +2,7 @@
 
 /* Provide sufficient contrast against white background */
 body {
-  background-color: #84CEEB;
+  background-color: #CAE5FF;
 }
 
 a {
@@ -11,6 +11,23 @@ a {
 
 code {
   color: #e01a76;
+}
+
+.app-wrapper {
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, .10);
+  box-shadow: 0px 0px 10px 0px black;
+  background-color: #84CEEB;
+}
+
+.container-fluid {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.app-side-padding {
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .btn-primary {
@@ -25,11 +42,11 @@ code {
 }
 
 .top-buffer {
-  padding-top: 50px;
+  padding-top: 2vh;
 }
 
 .board-box {
-  height: min(12vw, 250px);
+  height: min(25vh, 250px);
   width: min(12vw, 250px);
 }
 
@@ -75,6 +92,13 @@ code {
 
 .spinner-wrapper {
   display: flex;
+  align-content: end;
+  align-items: end;
+}
+
+.align-message-bottom {
+    margin-bottom: 0;
+    margin-top: auto;
 }
 
 html, body { height: 100%; }

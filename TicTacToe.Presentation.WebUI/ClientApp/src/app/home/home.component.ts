@@ -92,6 +92,10 @@ export class HomeComponent {
   }
 
   initPlayer(playerName: string) {
+    if (playerName === undefined) {
+      playerName = "";
+    }
+
     //Init player
     this.playerService.InitPlayer(playerName).subscribe(player => {
       this.player = player;
@@ -100,7 +104,7 @@ export class HomeComponent {
       this.matchService.Get(player.matchId).subscribe(match => {
         this.match = match;
 
-        this.ticTacToeHubService.joinMatch(this.match.matchId, playerName);
+        this.ticTacToeHubService.joinMatch(this.match.matchId, this.player.name);
         this.ticTacToeHubService.updateBoard(this.match.matchId);
       });
     });
