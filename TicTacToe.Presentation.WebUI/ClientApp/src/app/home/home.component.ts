@@ -46,7 +46,8 @@ export class HomeComponent {
   welcomePlayer(): void {
     const dialogRef = this.dialog.open(NewPlayerDialogComponent, {
       width: '300px',
-      data: {  }
+      data: {},
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(playerName => {
@@ -57,7 +58,8 @@ export class HomeComponent {
   showMatchDrawDialog(): void {
     const dialogRef = this.dialog.open(MatchDrawDialogComponent, {
       width: '300px',
-      data: {}
+      data: {},
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(() => {
@@ -68,7 +70,8 @@ export class HomeComponent {
   showMatchWonDialog(): void {
     const dialogRef = this.dialog.open(MatchWonDialogComponent, {
       width: '300px',
-      data: {}
+      data: {},
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(() => {
@@ -79,7 +82,8 @@ export class HomeComponent {
   showMatchLostDialog(): void {
     const dialogRef = this.dialog.open(MatchLostDialogComponent, {
       width: '300px',
-      data: {}
+      data: {},
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(() => {
