@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Box } from '../models/box';
 import { Observable, throwError } from 'rxjs';
@@ -11,10 +11,11 @@ import { HttpParams } from "@angular/common/http";
 
 export class BoxService {
 
-  // Base url
-  baseurl = 'https://localhost:44314/box/';
+  url: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.url = baseUrl + 'box/';
+  }
 
   // Http Headers
   httpOptions = {
@@ -25,7 +26,7 @@ export class BoxService {
 
   Mark(boxId: string, playerId: string): Observable<Box> {
     const opts = new HttpParams({ fromObject: { playerId: playerId, boxId: boxId } });
-    return this.http.put<Box>(this.baseurl + 'Mark', JSON.stringify({}), {
+    return this.http.put<Box>(this.url + 'Mark', JSON.stringify({}), {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }),

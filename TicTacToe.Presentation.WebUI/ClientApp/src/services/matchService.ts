@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -10,10 +10,11 @@ import { Match } from '../models/match'
 
 export class MatchService {
 
-  // Base url
-  baseurl = 'https://localhost:44314/match/';
+  url: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.url = baseUrl + 'match/';
+  }
 
   // Http Headers
   httpOptions = {
@@ -24,7 +25,7 @@ export class MatchService {
 
   Get(matchId: string): Observable<Match> {
     const opts = { params: new HttpParams({ fromObject: { matchId: matchId } }) };
-    return this.http.get<Match>(this.baseurl + 'get', opts)
+    return this.http.get<Match>(this.url + 'get', opts)
       .pipe(
         retry(1),
         catchError(this.errorHandl)

@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Inject } from '@angular/core';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
 
 @Injectable({
@@ -9,11 +9,13 @@ export class TicTacToeHubService {
   playerJoined = new EventEmitter<any>();
   playerLeft = new EventEmitter<any>();
   connectionEstablished = new EventEmitter<Boolean>();
+  url: string;
 
   private connectionIsEstablished = false;
   private _hubConnection: HubConnection;
 
-  constructor() {
+  constructor(@Inject('BASE_URL') baseUrl: string) {
+    this.url = baseUrl + 'TicTacToeHub';
     this.createConnection();
     this.registerOnServerEvents();
     this.startConnection();
@@ -29,7 +31,7 @@ export class TicTacToeHubService {
 
   private createConnection() {
     this._hubConnection = new HubConnectionBuilder()
-      .withUrl(window.location.href + 'TicTacToeHub')
+      .withUrl(this.url)
       .build();
   }
 

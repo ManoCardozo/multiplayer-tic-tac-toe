@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -11,10 +11,11 @@ import { HttpParams } from "@angular/common/http";
 
 export class PlayerService {
 
-  // Base url
-  baseurl = 'https://localhost:44314/player/';
+  url: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.url = baseUrl + 'player/';
+  }
 
   // Http Headers
   httpOptions = {
@@ -25,7 +26,7 @@ export class PlayerService {
 
   InitPlayer(playerName: string): Observable<Player> {
     const opts = new HttpParams({ fromObject: { playerName: playerName } });
-    return this.http.post<Player>(this.baseurl + 'InitPlayer', JSON.stringify({}), {
+    return this.http.post<Player>(this.url + 'InitPlayer', JSON.stringify({}), {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }),
