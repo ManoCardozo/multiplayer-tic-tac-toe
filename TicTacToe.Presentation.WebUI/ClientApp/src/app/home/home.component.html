@@ -1,11 +1,11 @@
 
   <div *ngIf="match" class="container-fluid">
     <div class="app-wrapper">
-      <div class="row app-side-padding match-header-message top-buffer">
-        <div class="col-6 align-message-bottom">
+      <div class="row no-gutters app-side-padding match-header-message top-buffer">
+        <div class="col-sm-6 align-message-bottom">
           <span style="font-size: 2.5rem; font-weight: 500">Tic Tac Toe</span>
         </div>
-        <div class="col-6 text-right align-message-bottom">
+        <div class="col-sm-6 text-right align-message-bottom">
           <span *ngIf="!match.playerTurnId">
             Waiting for opponent...
           </span>
@@ -20,15 +20,15 @@
 
       <div class="row no-gutters top-buffer">
         <div class="col-6">
-          <div style="height:50px; border-top: 1px solid gray;; border-bottom: 1px solid gray;">
-            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player1 && match.playerTurnId === match.player1.playerId) ? 'player-turn' : ''">
+          <div style="height:50px; border-top: 1px solid gray; border-bottom: 1px solid gray;">
+            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player1 && match.playerTurnId === match.player1.playerId) ? 'player1-turn' : ''">
               {{match.player1 ? match.player1.name : ''}}
             </p>
           </div>
         </div>
         <div class="col-6 text-right">
-          <div style="height:50px; border-top: 1px solid gray;; border-bottom: 1px solid gray;">
-            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player2 && match.playerTurnId === match.player2.playerId) ? 'player-turn' : ''">
+          <div style="height:50px; border-top: 1px solid gray; border-bottom: 1px solid gray;">
+            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player2 && match.playerTurnId === match.player2.playerId) ? 'player2-turn' : ''">
               {{match.player2 ? match.player2.name : ''}}
             </p>
           </div>

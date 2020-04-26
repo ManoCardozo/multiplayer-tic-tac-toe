@@ -2,7 +2,7 @@
 
 /* Provide sufficient contrast against white background */
 body {
-  background-color: #CAE5FF;
+  
 }
 
 a {
@@ -17,7 +17,7 @@ code {
   margin-top: 10px;
   border: 1px solid rgba(0, 0, 0, .10);
   box-shadow: 0px 0px 10px 0px black;
-  background-color: #84CEEB;
+  background-color: rgb(217, 236, 255);
 }
 
 .container-fluid {
@@ -70,14 +70,14 @@ code {
 
 .box-content {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .box-mark {
-  font-size: 9vw;
-}
-
-.box-mark-circle {
-  font-size: 9vw;
+  font-size: 12vmin;
 }
 
 .full-size {
@@ -85,9 +85,12 @@ code {
   height: 100%;
 }
 
-.player-turn {
-    font-weight: bold;
-    color: blue;
+.player1-turn {
+  color: blue;
+}
+
+.player2-turn {
+  color: red;
 }
 
 .spinner-wrapper {
