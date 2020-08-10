@@ -21,15 +21,15 @@
       <div class="row no-gutters top-buffer">
         <div class="col-6">
           <div style="height:50px; border-top: 1px solid gray; border-bottom: 1px solid gray;">
-            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player1 && match.playerTurnId === match.player1.playerId) ? 'player1-turn' : ''">
-              {{match.player1 ? match.player1.name : ''}}
+            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.playerOne && match.playerTurnId === match.playerOne.playerId) ? 'playerOne-turn' : ''">
+              {{match.playerOne ? match.playerOne.name : ''}}
             </p>
           </div>
         </div>
         <div class="col-6 text-right">
           <div style="height:50px; border-top: 1px solid gray; border-bottom: 1px solid gray;">
-            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.player2 && match.playerTurnId === match.player2.playerId) ? 'player2-turn' : ''">
-              {{match.player2 ? match.player2.name : ''}}
+            <p style="line-height: 50px; padding-right: 5px; padding-left: 5px" [ngClass]="(match.playerTwo && match.playerTurnId === match.playerTwo.playerId) ? 'playerTwo-turn' : ''">
+              {{match.playerTwo ? match.playerTwo.name : ''}}
             </p>
           </div>
         </div>

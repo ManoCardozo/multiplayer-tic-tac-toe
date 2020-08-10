@@ -40,7 +40,6 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             {
                 using (var unitOfWork = unitOfWorkFactory.Create())
                 {
-                    //Mark box by populating marked by person
                     box.MarkedById = player.PlayerId;
 
                     //Add play to match history

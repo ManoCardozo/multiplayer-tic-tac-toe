@@ -32,7 +32,6 @@ namespace TicTacToe.Presentation.WebUI.Controllers
         {
             var match = matchService.GetOpen();
 
-            //Create a new player
             var playerCount = (match?.Players?.Count() ?? 0) + 1;
 
             playerName = string.IsNullOrEmpty(playerName)
@@ -55,7 +54,6 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                     repository.Add(match);
                 }
 
-                //Add new player to the match
                 newPlayer.MatchId = match.MatchId;
 
                 repository.Add(newPlayer);

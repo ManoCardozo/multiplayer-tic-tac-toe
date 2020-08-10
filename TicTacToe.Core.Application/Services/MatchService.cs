@@ -49,6 +49,30 @@ namespace TicTacToe.Core.Application.Services
             return nextTurn;
         }
 
+        public Player GetPlayerOne(Match match)
+        {
+            var players = match?.Players;
+
+            var playerOne = players?
+                .Skip(0)?
+                .Take(1)?
+                .FirstOrDefault();
+
+            return playerOne;
+        }
+
+        public Player GetPlayerTwo(Match match)
+        {
+            var players = match?.Players;
+
+            var playerTwo = players?
+                .Skip(1)?
+                .Take(1)?
+                .FirstOrDefault();
+
+            return playerTwo;
+        }
+
         public bool IsFinished(Match match)
         {
             var boxes = match?.Board?.Boxes;

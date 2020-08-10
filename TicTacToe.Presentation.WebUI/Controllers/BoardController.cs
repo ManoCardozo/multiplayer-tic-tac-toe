@@ -46,7 +46,6 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             
             using (var unitOfWork = unitOfWorkFactory.Create())
             {
-                // Add a board to a match if it doesn't have one
                 if (board == null)
                 {
                     board = new Board()

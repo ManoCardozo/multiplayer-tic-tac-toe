@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TicTacToe.Presentation.WebUI.Models;
 using TicTacToe.Core.Application.Interfaces;
@@ -31,18 +30,8 @@ namespace TicTacToe.Presentation.WebUI.Controllers
                 return NotFound();
             }
 
-            var players = match?.Players;
-
-            var player1 = players?
-                .Skip(0)?
-                .Take(1)?
-                .FirstOrDefault();
-
-            var player2 = players?
-                .Skip(1)?
-                .Take(1)?
-                .FirstOrDefault();
-
+            var playerOne = matchService.GetPlayerOne(match);
+            var playerTwo = matchService.GetPlayerTwo(match);
             var winner = matchResultService.DetermineWinner(match);
             var turn = matchService.GetNextTurn(match);
             var isFinished = matchService.IsFinished(match);
@@ -50,19 +39,19 @@ namespace TicTacToe.Presentation.WebUI.Controllers
             var matchViewModel = new MatchViewModel
             {
                 MatchId = match.MatchId,
-                Player1 = player1 != null ? new PlayerViewModel
+                PlayerOne = playerOne != null ? new PlayerViewModel
                 {
-                    PlayerId = player1.PlayerId,
-                    Name = player1.Name,
-                    MatchId = player1.MatchId,
-                    Symbol = player1.Symbol
+                    PlayerId = playerOne.PlayerId,
+                    Name = playerOne.Name,
+                    MatchId = playerOne.MatchId,
+                    Symbol = playerOne.Symbol
                 } : null,
-                Player2 = player2 != null ? new PlayerViewModel
+                PlayerTwo = playerTwo != null ? new PlayerViewModel
                 {
-                    PlayerId = player2.PlayerId,
-                    Name = player2.Name,
-                    MatchId = player2.MatchId,
-                    Symbol = player2.Symbol
+                    PlayerId = playerTwo.PlayerId,
+                    Name = playerTwo.Name,
+                    MatchId = playerTwo.MatchId,
+                    Symbol = playerTwo.Symbol
                 } : null,
                 WinnerId = winner?.PlayerId,
                 PlayerTurnId = turn?.PlayerId,

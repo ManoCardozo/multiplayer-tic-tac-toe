@@ -85,11 +85,11 @@ code {
   height: 100%;
 }
 
-.player1-turn {
+.playerOne-turn {
   color: blue;
 }
 
-.player2-turn {
+.playerTwo-turn {
   color: red;
 }
 
