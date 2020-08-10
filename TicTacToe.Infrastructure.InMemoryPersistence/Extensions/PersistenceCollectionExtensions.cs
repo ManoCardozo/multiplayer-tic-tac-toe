@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using TicTacToe.Infrastructure.Persistence;
 
-namespace TicTacToe.Infrastructure.Persistence
+namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class DependencyInjection
+    public static class PersistenceCollectionExtensions
     {
-        public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
+        public static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
             services
                 .AddDbContext<TicTacToeContext>(options => 
@@ -16,7 +16,7 @@ namespace TicTacToe.Infrastructure.Persistence
                         .UseInMemoryDatabase(configuration.GetValue<string>("DatabaseName"));
                 });
 
-            return services;
+            services.AddScoped<ITicTacToeContext, TicTacToeContext>();
         }
     }
 }
