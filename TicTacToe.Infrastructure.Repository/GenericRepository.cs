@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using TicTacToe.Infrastructure.Persistence;
 using TicTacToe.Core.Domain.FetchStrategy.Interfaces;
 using TicTacToe.Core.Domain.Specifications.Interfaces;
-using TicTacToe.Infrastructure.Persistence;
 
 namespace TicTacToe.Infrastructure.Repository
 {

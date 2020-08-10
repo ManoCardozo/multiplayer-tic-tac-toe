@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
+using System.Collections.Generic;
 using TicTacToe.Core.Domain.Extensions;
 using TicTacToe.Core.Domain.FetchStrategy.Interfaces;
 

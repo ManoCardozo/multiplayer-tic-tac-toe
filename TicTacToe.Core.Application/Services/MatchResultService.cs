@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System.Collections.Generic;
 using TicTacToe.Core.Application.Interfaces;
 using TicTacToe.Core.Domain.Entities;
 

@@ -1,6 +1,6 @@
 ﻿using System;
-using TicTacToe.Core.Application.Interfaces;
 using TicTacToe.Core.Domain.Entities;
+using TicTacToe.Core.Application.Interfaces;
 using TicTacToe.Infrastructure.Repository;
 
 namespace TicTacToe.Core.Application.Services
